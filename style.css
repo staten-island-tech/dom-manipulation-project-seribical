@@ -15,7 +15,7 @@ body {
     background-color: #5a5a5a;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     border-radius: 10px;
 }
 
@@ -25,4 +25,34 @@ body {
     justify-content: space-evenly;
     width: 100%;
     flex-wrap: wrap;
+}
+
+#card{
+    background-color: #BDBDBD;
+    height: 450px;
+    width: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 30px 0;
+    border-radius: 20px;
+    transition: all 0.3s;
+    text-decoration: none;
+    text-decoration-color: none;
+    margin: 25px;
+}
+
+.img{
+    width:92%
+}
+
+#input{
+    justify-content: center;
+    align-items: center;
+    margin:0px;
+}
+
+#text{
+    margin-bottom: 0px;
 }

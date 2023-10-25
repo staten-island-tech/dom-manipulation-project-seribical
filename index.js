@@ -7,7 +7,7 @@ const DOMSelectors = {
   };
   
   DOMSelectors.button.addEventListener("click", function () {
-    let cardtitle = DOMSelectors.cardtitle.value; // .value lets you get the values of an element, in this case something you typed in
+    let cardtitle = DOMSelectors.cardtitle.value;
     let carddesc = DOMSelectors.carddesc.value;
     let cardimg = DOMSelectors.cardimg.value;
   
@@ -16,16 +16,11 @@ const DOMSelectors = {
     DOMSelectors.box.insertAdjacentHTML(
       "beforeend",
         `
-          <h2 class = '??'>${cardtitle}</h2>
-          <p class = '/? '>${carddesc}</p>
-          <img src='${cardimg}'>
+        <div id="card">
+        <h2 class = '??'>${cardtitle}</h2>
+        <img src='${cardimg}' class="img">
+        <p class = '/? '>${carddesc}</p>
+    </div>
         `
     );
-  }); // this function will cause new HTML to be added when the input button is clicked.
-  
-  DOMSelectors.button.insertAdjacentHTML(
-    "afterend",
-    ``
-  );
-  // you can put multiple HTML tags in the same DOMSelector as if you were writing out regular HTML, you're also able to assigned classes and ids that can be used for styling the elements you add through js.
-  
+  });
