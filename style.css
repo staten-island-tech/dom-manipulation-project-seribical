@@ -41,6 +41,12 @@ body {
     text-decoration: none;
     text-decoration-color: none;
     margin: 25px;
+    transition: all 0.3s;
+}
+
+#card:hover{
+    box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
+    transform: translateY(-7px);
 }
 
 .img{
