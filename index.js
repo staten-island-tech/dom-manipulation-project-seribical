@@ -30,6 +30,7 @@ function inject(album){
       <h2 class = '??'>${album.cardtitle}</h2>
       <img src='${album.cardimg}' class="img">
       <p class = '/? '>${album.carddesc}</p>
+      <button type="button" id="rbtn">Remove</button>
   </div>
       `
 )};
@@ -45,5 +46,5 @@ DOMSelectors.button2.addEventListener("click", function () {
 });
 
 function remove(){
-  console.log('piss')
+  cardtitle.remove();
 }
