@@ -1,6 +1,6 @@
 const DOMSelectors = {
     button: document.getElementById("btn"),
-    button2: document.getElementById("rbtn"),
+    rbutton: document.getElementById("rbtn"),
     box: document.getElementById("flexbox"),
     cardtitle: document.querySelector(`#cardtitle`),
     carddesc: document.querySelector(`#carddesc`),
@@ -31,8 +31,10 @@ function inject(album){
       <img src='${album.cardimg}' class="img">
       <p class = '/? '>${album.carddesc}</p>
       <button type="button" id="rbtn">Remove</button>
-  </div>
+    </div>
       `
+    
+  
 )};
 
 function clearentry(){
@@ -41,10 +43,12 @@ function clearentry(){
   DOMSelectors.cardimg.value = '';
 };
 
-DOMSelectors.button2.addEventListener("click", function () {
-  remove()
+DOMSelectors.rbutton.addEventListener("click", function () {
+  remove();
 });
 
 function remove(){
-  cardtitle.remove();
-}
+  let remove = document.querySelectorAll('#card');
+  remove.forEach((btn)=>btn.parentElement);
+};
+
