@@ -1,10 +1,11 @@
 const DOMSelectors = {
-    button: document.getElementById("btn"),
-    rbutton: document.getElementById("rbtn"),
+    button: document.querySelector(`#btn`),
+    rbutton: document.querySelectorAll("#rbtn"),
     box: document.getElementById("flexbox"),
     cardtitle: document.querySelector(`#cardtitle`),
     carddesc: document.querySelector(`#carddesc`),
-    cardimg: document.querySelector(`#cardimg`)
+    cardimg: document.querySelector(`#cardimg`),
+    card: document.getElementById("card"),
 };
 
 DOMSelectors.button.addEventListener("click", function (event) {
@@ -48,7 +49,12 @@ DOMSelectors.rbutton.addEventListener("click", function () {
 });
 
 function remove(){
-  let remove = document.querySelectorAll('#card');
-  remove.forEach((btn)=>btn.parentElement);
+  let rbtn = document.querySelectorAll("rbtn");
+  rbtn.forEach((btn)=>
+    btn.addEventListener("click",function (event){
+      event.target.parentElement.remove();
+    })
+  );
 };
 
+console.log(DOMSelectors.rbutton);
