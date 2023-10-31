@@ -1,11 +1,9 @@
 const DOMSelectors = {
     button: document.querySelector(`#btn`),
-    rbutton: document.querySelectorAll("#rbtn"),
     box: document.getElementById("flexbox"),
     cardtitle: document.querySelector(`#cardtitle`),
     carddesc: document.querySelector(`#carddesc`),
     cardimg: document.querySelector(`#cardimg`),
-    card: document.getElementById("card"),
 };
 
 DOMSelectors.button.addEventListener("click", function (event) {
@@ -25,7 +23,7 @@ function data(){
 
 function inject(album){
   DOMSelectors.box.insertAdjacentHTML(
-    "beforeend",
+    "afterbegin",
       `
       <div id="card">
       <h2 class = '??'>${album.cardtitle}</h2>
@@ -33,10 +31,11 @@ function inject(album){
       <p class = '/? '>${album.carddesc}</p>
       <button type="button" id="rbtn">Remove</button>
     </div>
-      `
-    
-  
-)};
+      `);
+
+    const card = document.querySelector(`#card`);
+    remove(card);
+};
 
 function clearentry(){
   DOMSelectors.cardtitle.value = '';
@@ -44,17 +43,10 @@ function clearentry(){
   DOMSelectors.cardimg.value = '';
 };
 
-DOMSelectors.rbutton.addEventListener("click", function () {
-  remove();
-});
+function remove(card){
+  const button = card.querySelector(`#rbtn`);
 
-function remove(){
-  let rbtn = document.querySelectorAll("rbtn");
-  rbtn.forEach((btn)=>
-    btn.addEventListener("click",function (event){
-      event.target.parentElement.remove();
-    })
-  );
+  button.addEventListener("click", function(event){
+    card.remove();
+  });
 };
-
-console.log(DOMSelectors.rbutton);
